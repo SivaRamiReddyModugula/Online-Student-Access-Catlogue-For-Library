@@ -9,7 +9,7 @@
 **Java Version:JDK** 1.8  
 **Apachee Tomcat:** 8.0.27.0  
 **MySql server:** 5.0  
-**IDE:** NetBeans  
+**IDE:** NetBeans or Eclipse  
 **Technology:** J2EE, JSP, Servlets, BootStrap.  
 #### Jar files
 - mail jar
