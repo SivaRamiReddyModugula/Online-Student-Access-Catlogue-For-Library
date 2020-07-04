@@ -16,18 +16,18 @@
 - Mysql connector
 ## DataBase
 - First the database is created with the different tables as shown in the following figures.!!  
-**Book:** ![alt book image](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/List%20of%20Book.PNG)  
-**List of Books:** ![alt List of books](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/List%20of%20Books.PNG)  
-**Faculty Tabel:** ![alt Faculty Tabel](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/Faculty.PNG)  
-**Student Tabel:** ![alt Student Tabel](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/student.PNG)  
-**Faculty Issue Tabel:** ![alt Faculty issue Tabel](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/Faculty%20issue.PNG)  
-**Student Issue Tabel:** ![alt Student issue Table](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/student.PNG)  
+**Book:** ![alt book image](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/List%20of%20Book.PNG)  
+**List of Books:** ![alt List of books](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/List%20of%20Books.PNG)  
+**Faculty Tabel:** ![alt Faculty Tabel](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/Faculty.PNG)  
+**Student Tabel:** ![alt Student Tabel](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/student.PNG)  
+**Faculty Issue Tabel:** ![alt Faculty issue Tabel](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/issue.PNG)  
+**Student Issue Tabel:** ![alt Student issue Table](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/student.PNG)  
 ## Project Achetecture
 The Below figure shown the full archetecture of this project
-![alt achetecture](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/Deployment%20diagram.png)
+![alt achetecture](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/Deployment%20diagram.png)
 ## Running Project
 This how the project home page will look like after running the project  
-![alt home page](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catalogue-For-Library/blob/master/Table%20Data/Home.PNG)
+![alt home page](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/Home.PNG)
 ## Project Explanation
 - First user(Student/Faculty) has to get the registration done.
 - Then the Librarian has to login into their admin account.
