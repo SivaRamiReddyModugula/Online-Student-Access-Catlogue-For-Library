@@ -13,7 +13,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
+        <title>Fine</title>
     </head>
     <body>
         <%

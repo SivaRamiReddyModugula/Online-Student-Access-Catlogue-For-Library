@@ -18,7 +18,7 @@
   <meta name="author" content="">
 
   <title>Online Student Access Catalogue for Library</title>
-  <link rel="icon" href="images/logo.png" >
+  <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -96,7 +96,7 @@
     <div class="row">
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Admin</h4>
+          <h4 class="card-header">Administrator</h4>
           <div class="card-body">
             
               <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>

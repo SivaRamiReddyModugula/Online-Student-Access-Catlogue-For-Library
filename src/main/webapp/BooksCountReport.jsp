@@ -19,6 +19,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
         <title>Book Count Report</title>
     </head>
     <body>

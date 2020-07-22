@@ -14,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Admin Code Verification</title>
 
   <!-- Bootstrap core CSS -->

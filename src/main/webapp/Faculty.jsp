@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Online Student Access Catalogue for Library</title>
 
   <!-- Bootstrap core CSS -->
