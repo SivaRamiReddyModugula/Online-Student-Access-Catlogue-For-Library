@@ -1,9 +1,3 @@
-<%-- 
-    Document   : FineStudent
-    Created on : Jan 29, 2020, 3:54:25 PM
-    Author     : Siva Rami Reddy
---%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Online Student Access Catalogue for Library</title>
 
   <!-- Bootstrap core CSS -->
@@ -38,7 +32,6 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="AdminHome.jsp">Home</a>
-            
           </li>
           
           
@@ -79,22 +72,13 @@
   </header>
   <!-- Page Content -->
   <div class="container">
-    <%
-    String htno = request.getParameter("htno");
-    session.setAttribute("htno",htno);
-    PreparedStatement ps2 = conn.prepareStatement("SELECT * from student where htno='"+htno+"'");
-    ResultSet rs2 = ps2.executeQuery();
-    if(rs2.next()){
-    %>
-    <h3 style="color: red"><%=rs2.getString("sname")%></h3>
-    <%}%>
+
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3"></h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="AdminHome.jsp">Home</a>
-        <li class="breadcrumb-item active"><a href="PayFine.jsp">Pay Fine</a></li>
       </li>
     </ol>
 
@@ -119,32 +103,53 @@
         <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">PAY FINE</h4>
+          <h4 class="card-header">Deactivate Student</h4>
           <div class="card-body">
             
-              <form action="UpdateFineInDB.jsp" method="post" id="contactForm" novalidate>
+              <form action="DeactivateStudentAccount.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
-              <label><%
-            PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where htno='"+htno+"' AND fine > 0 ");
-            ResultSet rs1 = ps1.executeQuery();
-            if(rs1.next()){
-      %>
-      <h6 align="center">Total fine is Rs. <b  style="color: red"><%=rs1.getInt(1)%>.00</b>\- only.</h6>
-      <%}%></label>
-              
+              <label>Roll Number:</label>
+              <input type="text" class="form-control" name="htno" id="name" required data-validation-required-message="Please enter your name.">
               <p class="help-block"></p>
             </div>
           </div>
           
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Pay</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Search</button>
         </form>
           </div>
         </div>
       </div>
+      <!-- <div class="col-lg-6 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">BOOK RETURN</h4>
+          <div class="card-body">
+            <form action="BookReturn.jsp" method="post" id="contactForm" novalidate>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Book Id:</label>
+              <input type="text" name="bid" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          
+          
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <!-- <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+        </form>
+          </div>
+          
+        </div>
+      </div>  -->
+      
     </div>
+        
+        
+        
+        
       </div>
     </div>
     <!-- /.row -->
@@ -167,5 +172,3 @@
 </body>
 
 </html>
-
-

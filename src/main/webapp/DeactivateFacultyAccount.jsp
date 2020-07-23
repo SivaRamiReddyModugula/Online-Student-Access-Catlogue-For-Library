@@ -1,9 +1,9 @@
-<%-- 
-    Document   : FineStudent
-    Created on : Jan 29, 2020, 3:54:25 PM
-    Author     : Siva Rami Reddy
---%>
-
+<%@page import="java.util.Calendar"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="DBConnection.DBConnection"%>
+<%@page import="java.sql.Connection"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <%@include file="fine.jsp" %>
+
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -37,10 +37,17 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="AdminHome.jsp">Home</a>
-            
+            <a class="nav-link" href="about.html">Accept Students</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Accept Faculty</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Add Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Remove Book</a>
+          </li>
           
           <li class="nav-item">
             <a class="nav-link" href="Logout.jsp">Logout</a>
@@ -79,23 +86,14 @@
   </header>
   <!-- Page Content -->
   <div class="container">
-    <%
-    String htno = request.getParameter("htno");
-    session.setAttribute("htno",htno);
-    PreparedStatement ps2 = conn.prepareStatement("SELECT * from student where htno='"+htno+"'");
-    ResultSet rs2 = ps2.executeQuery();
-    if(rs2.next()){
-    %>
-    <h3 style="color: red"><%=rs2.getString("sname")%></h3>
-    <%}%>
-    <!-- Page Heading/Breadcrumbs -->
+
+    <!-- Page Heading/Bread crumbs -->
     <h1 class="mt-4 mb-3"></h1>
 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="AdminHome.jsp">Home</a>
-        <li class="breadcrumb-item active"><a href="PayFine.jsp">Pay Fine</a></li>
-      </li>
+      <li class="breadcrumb-item"><a href="AdminHome.jsp">Home</a>
+        <li class="breadcrumb-item active"><a href="BookIssue.jsp">Book Issue</a></li>
+      
     </ol>
 
     <!-- Content Row -->
@@ -107,7 +105,7 @@
           <a href="ViewStudents.jsp" class="list-group-item">Add Students</a>
           <a href="ViewFaculty.jsp" class="list-group-item">Add Faculty</a>
           <a href="PayFine.jsp" class="list-group-item">Pay Fine</a>
-          <!-- <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a> -->
+          <!-- <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a>  -->
           <a href="AddBook.jsp" class="list-group-item">Add Book</a>
           <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
           <a href="Deactivate.jsp" class="list-group-item">Deactivate</a>
@@ -115,37 +113,72 @@
         </div>
       </div>
       <!-- Content Column -->
-      <div class="col-lg-9 mb-4">
-        <div class="row">
-      <div class="col-lg-6 mb-4">
+                <div class="col-lg-9 mb-4">
+        
+      <div class="col-lg-12 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">PAY FINE</h4>
+          <h4 class="card-header">Faculty Transaction Details</h4>
           <div class="card-body">
-            
-              <form action="UpdateFineInDB.jsp" method="post" id="contactForm" novalidate>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label><%
-            PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where htno='"+htno+"' AND fine > 0 ");
+              <%String fid = request.getParameter("fid");
+              session.setAttribute("fid", fid);
+      Connection conn = DBConnection.getConnection();
+            /* PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where fid='"+fid+"'");
             ResultSet rs1 = ps1.executeQuery();
-            if(rs1.next()){
+            if(rs1.next()){ */
       %>
-      <h6 align="center">Total fine is Rs. <b  style="color: red"><%=rs1.getInt(1)%>.00</b>\- only.</h6>
-      <%}%></label>
-              
-              <p class="help-block"></p>
-            </div>
-          </div>
-          
-          <div id="success"></div>
-          <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Pay</button>
-        </form>
+      
+      <div class="col-lg-9 mb-7"><a href="DeactivateFacultyDB.jsp" style="align-item:center;" class="btn btn-danger">Deactivate</a></div>
+      <!-- -->
+      <%
+      //}
+      %>
+      <br/>
+              <table class="table-bordered table-primary">  
+                  <tr>
+                      <th>Book ID</th>
+                      <th>Book Name</th>
+                      <th>Author Name</th>
+                      <th>Issued Date</th>
+                      <th>Submit Date</th>
+                      <th>Submitted Date</th>
+                      <th>Status</th>
+                      
+                  </tr>
+              <%
+      PreparedStatement ps = conn.prepareStatement("select * from factissue where fid='"+fid+"' AND status='issued' ORDER BY status asc");
+      ResultSet rs = ps.executeQuery();
+      while(rs.next()){
+           String s =rs.getString("status") ;
+              %>
+     
+      <tr>
+                      <td><%= rs.getString("bid")%></td>
+                      <td><%= rs.getString("bname")%></td>
+                      <td><%= rs.getString("author")%></td>
+                      <td><%= rs.getString("issue")%></td>
+                      <td><%= rs.getString("submit")%></td>
+                      <td><%if(s.equals("issued")){
+                          %>Not Submitted<%
+                      }else{%><%= rs.getString("submitted")%><%}%></td>
+                      <td><%= rs.getString("status")%></td>
+                      
+                  </tr>
+      <%}
+      
+      %>
+              </table>
+           <!--   <%
+            PreparedStatement ps3 = conn.prepareStatement("SELECT SUM(fine) FROM issue where htno='"+fid+"' AND fine > 0 ");
+            ResultSet rs3 = ps3.executeQuery();
+            if(rs3.next()){
+      %>
+      <br/></b> Rupees.</h6>
+      <%}%>-->
           </div>
         </div>
       </div>
-    </div>
       </div>
+   
     </div>
     <!-- /.row -->
 
@@ -167,5 +200,3 @@
 </body>
 
 </html>
-
-

@@ -103,6 +103,7 @@
           <!-- <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a> -->
           <a href="AddBook.jsp" class="list-group-item">Add Book</a>
           <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
+          <a href="Deactivate.jsp" class="list-group-item">Deactivate</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
       </div>

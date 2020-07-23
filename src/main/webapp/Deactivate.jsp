@@ -1,8 +1,3 @@
-<%-- 
-    Document   : FineStudent
-    Created on : Jan 29, 2020, 3:54:25 PM
-    Author     : Siva Rami Reddy
---%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +25,7 @@
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="AdminHome.jsp"><em>Online Student Access Catalogue for Library</em></a>
+        <a class="navbar-brand" href="AdminHome.jsp"><em>Online Student Access Catalogue for Library</em></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,10 +33,19 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="AdminHome.jsp">Home</a>
-            
           </li>
-          
-          
+<!--          <li class="nav-item">
+              <a class="nav-link" href="AdminUpdate.jsp"><abbr title="Update admin">Update</abbr></a>
+          </li>-->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="GenerateReports.jsp">Generate Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ShowStudents.jsp">Show Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ShowFaculty.jsp">Show Faculty</a>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" href="Logout.jsp">Logout</a>
           </li>
@@ -78,23 +82,27 @@
 
   </header>
   <!-- Page Content -->
+  <!-- Search Books -->
   <div class="container">
-    <%
-    String htno = request.getParameter("htno");
-    session.setAttribute("htno",htno);
-    PreparedStatement ps2 = conn.prepareStatement("SELECT * from student where htno='"+htno+"'");
-    ResultSet rs2 = ps2.executeQuery();
-    if(rs2.next()){
-    %>
-    <h3 style="color: red"><%=rs2.getString("sname")%></h3>
-    <%}%>
-    <!-- Page Heading/Breadcrumbs -->
+      <!-- <form action="SearchBookAdmin.jsp" method="post">
+    <div class="card mb-4">
+          <h5 class="card-header">Search for Book Availability</h5>
+          <div class="card-body">
+            <div class="input-group">
+                <input type="text" name="bookname" class="form-control" placeholder="Enter Book Name or Author Name (Capital Letters)">
+              <span class="input-group-btn">
+                  &emsp;<button class="btn btn-success" type="submit">Search</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>-->
+    <!-- Page Heading/Bread crumbs -->
     <h1 class="mt-4 mb-3"></h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="AdminHome.jsp">Home</a>
-        <li class="breadcrumb-item active"><a href="PayFine.jsp">Pay Fine</a></li>
       </li>
     </ol>
 
@@ -119,38 +127,30 @@
         <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">PAY FINE</h4>
+          <h4 class="card-header">DEACTIVATE</h4>
           <div class="card-body">
             
-              <form action="UpdateFineInDB.jsp" method="post" id="contactForm" novalidate>
-          <div class="control-group form-group">
-            <div class="controls">
-              <label><%
-            PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where htno='"+htno+"' AND fine > 0 ");
-            ResultSet rs1 = ps1.executeQuery();
-            if(rs1.next()){
-      %>
-      <h6 align="center">Total fine is Rs. <b  style="color: red"><%=rs1.getInt(1)%>.00</b>\- only.</h6>
-      <%}%></label>
-              
-              <p class="help-block"></p>
-            </div>
-          </div>
-          
-          <div id="success"></div>
-          <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Pay</button>
-        </form>
+              <a class="btn btn-primary" href="DeactivateStudent.jsp">Student</a>
+                &emsp;&emsp;&emsp;&emsp;
+              <a class="btn btn-primary" href="DeactivareFaculty.jsp">Faculty</a>
           </div>
         </div>
       </div>
+      
+      
     </div>
+        
+        
+        
+        
       </div>
     </div>
     <!-- /.row -->
 
   </div>
   <!-- /.container -->
+
+
 
   <!-- Footer -->
   <footer class="py-3 bg-dark">
@@ -167,5 +167,3 @@
 </body>
 
 </html>
-
-

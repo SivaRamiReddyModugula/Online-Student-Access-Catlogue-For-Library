@@ -108,6 +108,7 @@
           <!-- <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a>  -->
           <a href="AddBook.jsp" class="list-group-item">Add Book</a>
           <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
+          <a href="Deactivate.jsp" class="list-group-item">Deactivate</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
       </div>
@@ -120,7 +121,7 @@
           <div class="card-body">
               <% String fid = request.getParameter("fid");              
               Connection conn = DBConnection.getConnection();
-              PreparedStatement ps1 = conn.prepareStatement("select * from faculty where fid='"+fid+"'");
+              PreparedStatement ps1 = conn.prepareStatement("select * from faculty where fid='"+fid+"' AND status='Accepted'");
               ResultSet rs1 = ps1.executeQuery();
               if(rs1.next()){
               PreparedStatement ps = conn.prepareStatement("select count(*) from factissue where fid='"+fid+"' and status='issued'");
