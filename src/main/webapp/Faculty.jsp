@@ -91,7 +91,7 @@
           <a href="ViewStudents.jsp" class="list-group-item">Add Students</a>
           <a href="ViewFaculty.jsp" class="list-group-item">Add Faculty</a>
           <a href="PayFine.jsp" class="list-group-item">Pay Fine</a>
-          <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a>
+          <!-- <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a>  -->
           <a href="AddBook.jsp" class="list-group-item">Add Book</a>
           <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
