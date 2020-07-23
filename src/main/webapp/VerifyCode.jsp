@@ -20,7 +20,7 @@
                 %>
                 <script>
                     alert("Login Successful");
-                    window.location="AdminHome.jsp";
+                    window.location="VerifyMail.jsp";
                 </script>
             <%
             }else{
