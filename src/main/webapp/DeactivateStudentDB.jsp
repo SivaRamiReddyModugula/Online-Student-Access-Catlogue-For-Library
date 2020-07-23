@@ -18,9 +18,7 @@ String htno = (String)session.getAttribute("htno");
 Connection conn=DBConnection.getConnection();
 PreparedStatement ps=conn.prepareStatement("update student set status='Deactivated' where htno='"+htno+"'");
 int i=ps.executeUpdate();
-/* PreparedStatement ps1=conn.prepareStatement("delete form issue where htno='"+htno+"'");
-int j=ps1.executeUpdate(); */
-if(i>0 /* && j>0 */){
+if(i>0){
 %>
 	<script>
 		alert("Account Deactivated Successful");
