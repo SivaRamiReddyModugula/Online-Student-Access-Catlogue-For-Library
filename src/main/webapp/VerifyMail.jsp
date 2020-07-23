@@ -31,7 +31,7 @@ if(rs.next()){%>
 		<script>window.location="MailConfirm.jsp";</script>
 		
 	<%}else{%>
-		<script>window.location="AdminHome.jsp"</script>
+		<script>window.location="AdminHome.jsp";</script>
 	<%}
 }
 %>
