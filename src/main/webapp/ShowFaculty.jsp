@@ -102,25 +102,27 @@
         </div>
       </div>-->
       <!-- Content Column -->
+      <%Connection conn =DBConnection.getConnection();
+      PreparedStatement ps1 = conn.prepareStatement("select count(*) from faculty where status='Accepted'");
+      ResultSet rs1 = ps1.executeQuery(); %>
       <div class="col-lg-12 mb-4">
         
       <div class="col-lg-auto mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Student Details</h4>
-          <div class="card-body">
-              <%
-              Connection conn =DBConnection.getConnection();
-              PreparedStatement ps1 = conn.prepareStatement("select count(*) from faculty where status='Accepted'");
-              ResultSet rs1 = ps1.executeQuery();
-              if(rs1.next()){
+          <h4 class="card-header">Student Details
+          <span style="float: right;">
+          <%if(rs1.next()){
                   %>
-                  <br/>
-              <h6 align="center">Total Registered Faculty: <b  style="color: red"><%=rs1.getInt(1)%></b>.</h6>
-              <br/>
+              <h6>Total Registered Faculty: <b  style="color: red"><%=rs1.getInt(1)%></b>.</h6>
+              
               <%
               }
               %>
-              <table class="table-bordered table-primary">
+          </span>
+          </h4>
+          <div class="card-body">
+              
+              <table align="center" class="table-bordered table-primary">
                   <tr>
                       <th>Roll Number</th>
                       <th>Photo</th>
