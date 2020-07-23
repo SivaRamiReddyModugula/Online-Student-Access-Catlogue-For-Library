@@ -98,20 +98,21 @@
         </div>
       </div>
       <!-- Content Column -->
-                <div class="col-lg-9 mb-4">
-        
-      <div class="col-lg-12 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Student Transaction Details</h4>
-          <div class="card-body">
-              <%String htno = (String)session.getAttribute("htno");
+      <%String htno = (String)session.getAttribute("htno");
       Connection conn = DBConnection.getConnection();
             PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where htno='"+htno+"' AND fine > 0 ");
             ResultSet rs1 = ps1.executeQuery();
             if(rs1.next()){
       %>
-      <br/><h6 align="center">Total fine is Rs. <b  style="color: red"><%=rs1.getInt(1)%>.00</b>\- only.</h6>
+                <div class="col-lg-9 mb-4">
+        
+      <div class="col-lg-12 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Student Transaction Details<span style="float: right"><h6>Total fine is Rs. <b  style="color: red;"><%=rs1.getInt(1)%>.00</b>\- only.</h6></span>
       <%}%>
+      </h4>
+          <div class="card-body">
+              
       <br/>
               <table class="table-bordered table-primary">  
                   <tr>

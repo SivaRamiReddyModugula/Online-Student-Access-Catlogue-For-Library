@@ -113,20 +113,30 @@
         </div>
       </div>
       <!-- Content Column -->
+      <%String htno = request.getParameter("htno");
+      session.setAttribute("htno", htno);
+      Connection conn = DBConnection.getConnection(); 
+      PreparedStatement ps2=conn.prepareStatement("select * from student where htno='"+htno+"'");
+      ResultSet rs2=ps2.executeQuery();
+      %>
                 <div class="col-lg-9 mb-4">
         
       <div class="col-lg-12 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Student Transaction Details</h4>
+          <h4 class="card-header">Student Transaction Details<span><a href="DeactivateStudentDB.jsp" style="float: right;" class="btn btn-danger">Deactivate</a></span></h4>
           <div class="card-body">
-              <%String htno = request.getParameter("htno");
-              session.setAttribute("htno", htno);
-      Connection conn = DBConnection.getConnection();
+              <%
+              if(rs2.next()){%>
+            	  <h4>Welcome Miss./Mr. <%= rs2.getString("sname") %></h4>
+            	  
+              <%}
             PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where htno='"+htno+"' AND fine > 0 ");
             ResultSet rs1 = ps1.executeQuery();
             if(rs1.next()){
       %>
-      <br/><a href="DeactivateStudentDB.jsp" style="align-item:center;" class="btn btn-danger">Deactivate</a><h6 align="center">Total fine is Rs. <b  style="color: red"><%=rs1.getInt(1)%>.00</b>\- only.</h6>
+      <br/>
+      
+      <br/><h6 align="center">Total fine is Rs. <b  style="color: red"><%=rs1.getInt(1)%>.00</b>\- only.</h6>
       <%}%>
       
       <br/>

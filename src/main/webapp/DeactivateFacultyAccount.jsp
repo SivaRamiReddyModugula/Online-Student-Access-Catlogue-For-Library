@@ -113,21 +113,30 @@
         </div>
       </div>
       <!-- Content Column -->
+      <%
+      String fid = request.getParameter("fid");
+      session.setAttribute("fid", fid);
+      Connection conn = DBConnection.getConnection();
+      PreparedStatement ps2=conn.prepareStatement("select * from faculty where fid='"+fid+"'");
+      ResultSet rs2=ps2.executeQuery();
+      %>
                 <div class="col-lg-9 mb-4">
         
       <div class="col-lg-12 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Faculty Transaction Details</h4>
+          <h4 class="card-header">Faculty Transaction Details <span><a href="DeactivateFacultyDB.jsp" style="float: right;" class="btn btn-danger">Deactivate</a></span></h4>
           <div class="card-body">
-              <%String fid = request.getParameter("fid");
-              session.setAttribute("fid", fid);
-      Connection conn = DBConnection.getConnection();
+          <%
+              if(rs2.next()){%>
+            	  <h4>Welcome Miss./Mr. <%= rs2.getString("fname") %></h4>
+            	  
+              <%}
             /* PreparedStatement ps1 = conn.prepareStatement("SELECT SUM(fine) FROM issue where fid='"+fid+"'");
             ResultSet rs1 = ps1.executeQuery();
             if(rs1.next()){ */
       %>
       
-      <div class="col-lg-9 mb-7"><a href="DeactivateFacultyDB.jsp" style="align-item:center;" class="btn btn-danger">Deactivate</a></div>
+      <div class="col-lg-9 mb-7"></div>
       <!-- -->
       <%
       //}
@@ -172,7 +181,7 @@
             ResultSet rs3 = ps3.executeQuery();
             if(rs3.next()){
       %>
-      <br/></b> Rupees.</h6>
+      <br/></b>
       <%}%>-->
           </div>
         </div>
