@@ -1,5 +1,6 @@
 
 <!DOCTYPE html>
+<%@page import="java.io.File"%>
 <html lang="en">
 
 <head>
@@ -104,6 +105,16 @@
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
       </div>
+      
+      <!-- Creating Directory -->
+      
+      <%
+      File file=new File("C://Library Reports");
+      try{file.mkdir();}catch(Exception e){
+      	System.out.println("Error in creating directory"+e.getMessage());
+      }
+      %>
+      
       <!-- Content Column -->
       <div class="col-lg-9 mb-4">
         <div class="row">
