@@ -94,6 +94,8 @@
 
     <!-- Marketing Icons Section -->
     <div class="row">
+    
+    <!-- Administrator panel -->
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
           <h4 class="card-header">Administrator</h4>
@@ -116,11 +118,14 @@
                   <input type="hidden" value="1" name="status"/>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>          
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button> 
+                   
         </form>
           </div>
         </div>
       </div>
+      
+      <!-- Faculty panel -->
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
           <h4 class="card-header">Faculty</h4>
@@ -142,13 +147,16 @@
                   <input type="hidden" value="3" name="status"/>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>          
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+          <span style="float: right"><a href="FacultyForgottenPassNo.jsp">Forgotten password?</a></span>          
         </form>
               <p>New Faculty ? <a href="FacultyRegistration.jsp">Click Here!</a> to Register.</p>
           </div>
           
         </div>
       </div>
+      
+      <!-- Student panel -->
       <div class="col-lg-4 mb-4">
         <div class="card h-100">
           <h4 class="card-header">Student</h4>
@@ -170,7 +178,8 @@
                   <input type="hidden" value="2" name="status"/>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>          
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+          <span style="float: right"><a href="StudentForgottenPassNo.jsp">Forgotten password?</a></span>          
         </form>
               <p>New Student ? <a href="StudentRegistration.jsp">Click Here!</a> to Register.</p>
           </div>
