@@ -130,7 +130,7 @@
       <tr><th>Name</th><td><%= rs.getString("sname")%></td></tr>
       <tr><th>Email</th><td><input required="required" type="text" class="form-control" name="email" value="<%= rs.getString("email")%>"/></td></tr>
       <tr><th>Mobile Number</th><td><input required="required" type="text" class="form-control" name="mno" value="<%=rs.getString("mno")%>"></td></tr>
-      <tr><th>Password</th><td><input required="required" type="password" class="form-control" name="pswd" value="<%=rs.getString("pswd")%>"></td></tr>
+      <tr><th>Password</th><td><input required="required" type="password" class="form-control" name="pswd" value="<%=rs.getString("pswd")%>" id="studentPswd"><span style="float: right;"><input type="checkbox" onclick="studentShowPswd()"> Show Password</span></td></tr>
       <tr><th>Branch</th><td><%= rs.getString("branch")%></td></tr>
       <tr><th>Course</th><td><%= rs.getString("course")%></td></tr>
       <tr><td colspan="3" align="center"><span class="input-group-btn">
@@ -161,6 +161,16 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+  function studentShowPswd() {
+	  var x = document.getElementById("studentPswd");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+  </script>
 
 </body>
 

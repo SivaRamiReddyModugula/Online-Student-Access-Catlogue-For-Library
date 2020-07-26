@@ -46,7 +46,7 @@
         String msg="<head><meta charset=“UTF-8”></head><p><b>Dear "+sname+",</b> <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Your forgotten code is <b style=\"color: green\">'"+finaly+"'</b>. Please verify and access your account. <br><p style=\"color: red\">Please delete this message after login.</p></p><br><br><h3 align=\"center\">Thank You!! &#x1F60a;</h3>";
                     //sending mail
         if(new MailUtil().sendMail(mail, mail, sub, msg)){
-           System.out.println("Forgotten mail sent successful");
+           //System.out.println("Forgotten mail sent successful");
            session.setAttribute("finaly",finaly);
         %>
            <script>
@@ -57,7 +57,7 @@
         <%
         }
                    else{
-                       System.out.println("Activation mail sent un-successful");%>
+                       //System.out.println("Activation mail sent un-successful");%>
                        <script>
                            alert("Code Generated Un-Successfull.Please try again later after sometime.");
                            window.location="index.html";
@@ -70,7 +70,7 @@
 			alert("Error in the DBConnection");
 			window.location="index.html";
         </script>
-        <%System.out.println("Error in DB Connection");
+        <%//System.out.println("Error in DB Connection");
         }
         %>
     </body>

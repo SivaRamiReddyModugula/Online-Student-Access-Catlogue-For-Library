@@ -100,7 +100,7 @@ System.out.print("DBerror");
 %>
 
     <!-- Page Heading/Breadcrumbs -->
-    <h2 class="mt-4 mb-3" style="color: red;"><%=fname %></h2>
+    <h4 class="mt-4 mb-3" style="">Welcome Miss./Mr. <%=fname %></h4>
 
     <!-- <ol class="breadcrumb">
       <li class="breadcrumb-item">
@@ -137,7 +137,8 @@ System.out.print("DBerror");
           <div class="control-group form-group">
             <div class="controls">
               <label>New Password:</label>
-              <input type="password" class="form-control" name="pswd" id="name" required data-validation-required-message="Please enter your name.">
+              <input type="password" class="form-control" name="pswd" id="facultyPswd" required data-validation-required-message="Please enter your name.">
+              <span style="float: right;"><input type="checkbox" onclick="facultyShowPswd()"> Show Password</span>
               <p class="help-block"></p>
             </div>
           </div>
@@ -174,6 +175,16 @@ System.out.print("DBerror");
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+  function facultyShowPswd() {
+	  var x = document.getElementById("facultyPswd");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+  </script>
 
 </body>
 

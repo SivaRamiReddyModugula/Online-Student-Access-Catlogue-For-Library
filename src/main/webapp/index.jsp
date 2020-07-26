@@ -111,8 +111,8 @@
           </div>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Password:</label>
-              <input type="password" name="pass" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <label>Password:</label><span style="float: right;"><input type="checkbox" onclick="adminShowPswd()"> Show Password</span>
+              <input type="password" name="pass" class="form-control" id="adminPswd" required data-validation-required-message="Please enter your phone number.">              
             </div>
           </div>
                   <input type="hidden" value="1" name="status"/>
@@ -140,8 +140,9 @@
           </div>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Password:</label>
-              <input type="password" name="pass" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+              <label>Password:</label><span style="float: right;"><input type="checkbox" onclick="facultyShowPswd()"> Show Password</span>
+              <input type="password" name="pass" class="form-control" id="facultyPswd" required data-validation-required-message="Please enter your phone number.">
+              
             </div>
           </div>
                   <input type="hidden" value="3" name="status"/>
@@ -171,8 +172,8 @@
           </div>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Password:</label>
-              <input type="password" name="pass" class="form-control" id="paswd" required data-validation-required-message="Please enter your phone number.">
+              <label>Password:</label><span style="float: right;"><input type="checkbox" onclick="studentShowPswd()"> Show Password</span>
+              <input type="password" name="pass" class="form-control" id="studentPswd" required data-validation-required-message="Please enter your phone number.">
             </div>
           </div>
                   <input type="hidden" value="2" name="status"/>
@@ -203,7 +204,32 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+<script type="text/javascript">
+function adminShowPswd() {
+	  var x = document.getElementById("adminPswd");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+function facultyShowPswd() {
+	  var x = document.getElementById("facultyPswd");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+function studentShowPswd() {
+	  var x = document.getElementById("studentPswd");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+</script>
 </body>
 
 </html>

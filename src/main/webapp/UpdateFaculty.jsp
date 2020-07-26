@@ -119,7 +119,7 @@
       <tr><th>Roll Number</th><td><%= rs.getString("fid")%></td></tr>
       <tr><th>Name</th><td><%= rs.getString("fname")%></td></tr>
       <tr><th>Email</th><td><input type="text" required="required" class="form-control" name="email" value="<%= rs.getString("email")%>"/></td></tr>
-      <tr><th>Password</th><td><input type="password" required="required" class="form-control" name="pswd" value="<%=rs.getString("pswd")%>"></td></tr>
+      <tr><th>Password</th><td><input type="password" required="required" class="form-control" name="pswd" value="<%=rs.getString("pswd")%>" id="facultyPswd"><span style="float: right;"><input type="checkbox" onclick="facultyShowPswd()"> Show Password</span></td></tr>
       <tr><th>Mobile Number</th><td><input type="text" required="required" class="form-control" name="mno" value="<%=rs.getString("mno")%>"></td></tr>
       <tr><th>Branch</th><td><%= rs.getString("dept")%></td></tr>
       <tr><th>Course</th><td><%= rs.getString("course")%></td></tr>
@@ -152,6 +152,16 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+  function facultyShowPswd() {
+	  var x = document.getElementById("facultyPswd");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+  </script>
 
 </body>
 
