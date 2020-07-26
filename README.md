@@ -27,7 +27,7 @@ The Below figure shown the full archetecture of this project
 ![alt achetecture](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/Deployment%20diagram.png)
 ## Running Project
 This how the project home page will look like after running the project  
-![alt home page](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/Home.PNG)
+![alt home page](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/Home.PNG?raw=true)
 ## Project Explanation
 - First user(Student/Faculty) has to get the registration done.
 - Then the Librarian has to login into their admin account.
