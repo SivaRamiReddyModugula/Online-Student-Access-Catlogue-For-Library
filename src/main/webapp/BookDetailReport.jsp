@@ -26,7 +26,7 @@
         <%
         {
         	// Creating the csv file for total books.
-            try (PrintWriter pw = new PrintWriter(new File("C:\\Reports\\Total Book Details.csv"))) {
+            try (PrintWriter pw = new PrintWriter(new File("C:\\Library Reports\\Total Book Details.csv"))) {
                 StringBuilder sb=new StringBuilder();
                 
                 // Database connection.

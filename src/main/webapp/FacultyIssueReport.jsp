@@ -25,7 +25,7 @@
     <body>
         <%
         {
-            try (PrintWriter pw = new PrintWriter(new File("C:\\Reports\\Faculty Pending Issue.csv"))) {
+            try (PrintWriter pw = new PrintWriter(new File("C:\\Library Reports\\Faculty Pending Issue.csv"))) {
                 StringBuilder sb=new StringBuilder();
                 
                 Connection conn=null;
@@ -74,7 +74,7 @@
         %>
         <%
         {
-            try (PrintWriter pw = new PrintWriter(new File("C:\\Reports\\Faculty Issue.csv"))) {
+            try (PrintWriter pw = new PrintWriter(new File("C:\\Library Reports\\Faculty Issue.csv"))) {
                 StringBuilder sb=new StringBuilder();
                 
                 Connection conn=null;

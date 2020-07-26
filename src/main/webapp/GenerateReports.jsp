@@ -111,7 +111,13 @@
       
       <%
       File file=new File("C://Library Reports");
-      try{file.mkdir();}catch(Exception e){
+      try{file.mkdir();}
+      catch(Exception e){%>
+      <script>
+		alert("Error in creating the directory. Please try again Later or Create a directory in 'C' drive as Library 'Reports'");
+		window.location="AdminHome.jsp";
+      </script>
+      <%
       	System.out.println("Error in creating directory"+e.getMessage());
       }
       %>
