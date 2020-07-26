@@ -114,7 +114,7 @@
       </div>
       <!-- Content Column -->
       <%
-      String fid = request.getParameter("fid");
+      String fid = (String)session.getAttribute("fid");
       session.setAttribute("fid", fid);
       Connection conn = DBConnection.getConnection();
       PreparedStatement ps2=conn.prepareStatement("select * from faculty where fid='"+fid+"'");
@@ -127,7 +127,10 @@
           <h4 class="card-header">Faculty Transaction Details <span><a href="DeactivateFacultyDB.jsp" style="float: right;" class="btn btn-danger">Deactivate</a></span></h4>
           <div class="card-body">
           <%
-              if(rs2.next()){%>
+              if(rs2.next()){
+            	  String fname=rs2.getString("fname");
+              //System.out.print("Hello"+fname);
+              %>
             	  <h4>Welcome Miss./Mr. <%= rs2.getString("fname") %></h4>
             	  
               <%}

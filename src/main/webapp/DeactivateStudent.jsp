@@ -106,7 +106,7 @@
           <h4 class="card-header">Deactivate Student</h4>
           <div class="card-body">
             
-              <form action="DeactivateStudentAccount.jsp" method="post" id="contactForm" novalidate>
+              <form action="DeactivateStudentAccountVerify.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
               <label>Roll Number:</label>
