@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-
+<script src="https://kit.fontawesome.com/3d79e937ce.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Online Student Access Catalogue for Library</title>
+  <!-- FontAwesome Core CSS -->
+  <link href="vendor/fontawesome/css/all.css" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -85,7 +87,18 @@
             <p><input type="text" name="fid" class="form-control" placeholder="Enter Your Faculty Id" required="required"></p>
             <p><input type="text" name="fname" class="form-control" placeholder="Enter Your Full Name" required="required"></p>
             <p><input type="email" name="email"  class="form-control" placeholder="Enter Your Email Address" required="required"></p>
-            <p><input type="password" name="pswd" class="form-control" placeholder="Enter Your Password" required="required"></p>
+            <p>
+            <div class="input-group">
+            	<input type="password" name="pswd" class="form-control" placeholder="Enter Your Password" required="required" id="facultyPswd">
+            	<div class="input-group-prepend">
+              	<div class="input-group-text">
+              		<a href="#" class="text-dark" id="faculty-icon-click">
+              		<i class="fas fa-eye" id="faculty-icon"></i>
+              		</a>
+              	</div>
+              </div>
+            </div>
+            </p>
             <p><input type="text" name="mno" class="form-control" placeholder="Enter Your Mobile Number" required="required"></p>
             <p><input type="text" name="dept" class="form-control" placeholder="Enter Your Department" required="required"></p>
             <p><input type="text" name="course" class="form-control" placeholder="Enter Your Course" required="required"></p>
@@ -137,6 +150,20 @@
   reader.readAsDataURL(selectedFile);
 }
 
+</script>
+<script type="text/javascript">
+//Faculty icon JQuary.
+$(document).ready(function(){
+	$("#faculty-icon-click").click(function() {
+		$("#faculty-icon").toggleClass('fa-eye-slash');
+		var x = document.getElementById("facultyPswd");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+	});
+});
 </script>
 </body>
 
