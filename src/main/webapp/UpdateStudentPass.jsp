@@ -20,6 +20,9 @@
 
 	<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Online Student Access Catalogue for Library</title>
+  <!-- FontAwesome Core CSS -->
+  <link href="vendor/fontawesome/css/all.css" rel="stylesheet">
+  
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
