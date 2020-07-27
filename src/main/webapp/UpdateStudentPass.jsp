@@ -12,7 +12,7 @@
 <html lang="en">
 
 <head>
-
+<script src="https://kit.fontawesome.com/3d79e937ce.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -135,12 +135,19 @@
             
               <form action="StudentForgottenPassUpdateDB.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
-            <div class="controls">
               <label>New Password:</label>
-              <input type="password" class="form-control" name="pswd" id="studentPswd" required data-validation-required-message="Please enter your name.">
-              <span style="float: right;"><input type="checkbox" onclick="studentShowPswd()"> Show Password</span>
-              <p class="help-block"></p>
+              <div class="input-group">
+              <input type="password" name="pswd" class="form-control" id="studentPswd" required data-validation-required-message="Please enter your phone number.">
+              <div class="input-group-prepend">
+              	<div class="input-group-text">
+              		<a href="#" class="text-dark" id="student-icon-click">
+              		<i class="fas fa-eye" id="student-icon"></i>
+              		</a>
+              	</div>
+              </div>              
             </div>
+              <p class="help-block"></p>
+            
           </div>
           
           <div id="success"></div>
@@ -176,14 +183,17 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
-function studentShowPswd() {
-	  var x = document.getElementById("studentPswd");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
+$(document).ready(function(){
+	$("#student-icon-click").click(function() {
+		$("#student-icon").toggleClass('fa-eye-slash');
+		var x = document.getElementById("studentPswd");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+	});
+});
 </script>
 </body>
 

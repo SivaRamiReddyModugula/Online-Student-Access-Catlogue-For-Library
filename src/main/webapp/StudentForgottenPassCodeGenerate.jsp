@@ -24,7 +24,7 @@
         String htno=request.getParameter("htno");
         session.setAttribute("htno", htno);
         Connection conn=DBConnection.getConnection();
-        PreparedStatement ps=conn.prepareStatement("select * from student where htno='"+htno+"'");
+        PreparedStatement ps=conn.prepareStatement("select * from student where htno='"+htno+"' and status='Accepted'");
         ResultSet rs=ps.executeQuery();
         if(rs.next()){
         int length=6;
@@ -67,7 +67,7 @@
         }
         else{%>
         <script>
-			alert("Error in the DBConnection");
+			alert("Error in the DBConnection, Invalied User, or Account already Deactivated");
 			window.location="index.html";
         </script>
         <%//System.out.println("Error in DB Connection");

@@ -8,10 +8,8 @@
         {
             window.history.forward();
         }
-        
-       
-          
     </script>
+    <script src="https://kit.fontawesome.com/3d79e937ce.js" crossorigin="anonymous"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -110,9 +108,16 @@
             </div>
           </div>
           <div class="control-group form-group">
-            <div class="controls">
-              <label>Password:</label><span style="float: right;"><input type="checkbox" onclick="adminShowPswd()"> Show Password</span>
-              <input type="password" name="pass" class="form-control" id="adminPswd" required data-validation-required-message="Please enter your phone number.">              
+              <label>Password:</label>
+              <div class="input-group">
+              <input type="password" name="pass" class="form-control" id="adminPswd" required data-validation-required-message="Please enter your phone number.">
+              <div class="input-group-prepend">
+              	<div class="input-group-text">
+              		<a href="#" class="text-dark" id="admin-icon-click">
+              		<i class="fas fa-eye" id="admin-icon"></i>
+              		</a>
+              	</div>
+              </div>              
             </div>
           </div>
                   <input type="hidden" value="1" name="status"/>
@@ -139,10 +144,16 @@
             </div>
           </div>
           <div class="control-group form-group">
-            <div class="controls">
-              <label>Password:</label><span style="float: right;"><input type="checkbox" onclick="facultyShowPswd()"> Show Password</span>
+              <label>Password:</label>
+              <div class="input-group">
               <input type="password" name="pass" class="form-control" id="facultyPswd" required data-validation-required-message="Please enter your phone number.">
-              
+              <div class="input-group-prepend">
+              	<div class="input-group-text">
+              		<a href="#" class="text-dark" id="faculty-icon-click">
+              		<i class="fas fa-eye" id="faculty-icon"></i>
+              		</a>
+              	</div>
+              </div>              
             </div>
           </div>
                   <input type="hidden" value="3" name="status"/>
@@ -171,9 +182,17 @@
             </div>
           </div>
           <div class="control-group form-group">
-            <div class="controls">
-              <label>Password:</label><span style="float: right;"><input type="checkbox" onclick="studentShowPswd()"> Show Password</span>
+            
+              <label>Password:</label>
+				<div class="input-group">
               <input type="password" name="pass" class="form-control" id="studentPswd" required data-validation-required-message="Please enter your phone number.">
+              <div class="input-group-prepend">
+              	<div class="input-group-text">
+              		<a href="#" class="text-dark" id="student-icon-click">
+              		<i class="fas fa-eye" id="student-icon"></i>
+              		</a>
+              	</div>
+              </div>              
             </div>
           </div>
                   <input type="hidden" value="2" name="status"/>
@@ -205,30 +224,44 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript">
-function adminShowPswd() {
-	  var x = document.getElementById("adminPswd");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
-function facultyShowPswd() {
-	  var x = document.getElementById("facultyPswd");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
-function studentShowPswd() {
-	  var x = document.getElementById("studentPswd");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
-	}
+// Admin icon JQuary.
+$(document).ready(function(){
+	$("#admin-icon-click").click(function() {
+		$("#admin-icon").toggleClass('fa-eye-slash');
+		var x = document.getElementById("adminPswd");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+	});
+});
+
+// Faculty icon JQuary.
+$(document).ready(function(){
+	$("#faculty-icon-click").click(function() {
+		$("#faculty-icon").toggleClass('fa-eye-slash');
+		var x = document.getElementById("facultyPswd");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+	});
+});
+
+//Student icon JQuary.
+$(document).ready(function(){
+	$("#student-icon-click").click(function() {
+		$("#student-icon").toggleClass('fa-eye-slash');
+		var x = document.getElementById("studentPswd");
+		  if (x.type === "password") {
+		    x.type = "text";
+		  } else {
+		    x.type = "password";
+		  }
+	});
+});
 </script>
 </body>
 

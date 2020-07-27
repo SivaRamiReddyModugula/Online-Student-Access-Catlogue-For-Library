@@ -24,7 +24,7 @@
         String fid=request.getParameter("fid");
         session.setAttribute("fid", fid);
         Connection conn=DBConnection.getConnection();
-        PreparedStatement ps=conn.prepareStatement("select * from faculty where fid='"+fid+"'");
+        PreparedStatement ps=conn.prepareStatement("select * from faculty where fid='"+fid+"' and status='Accepted'");
         ResultSet rs=ps.executeQuery();
         if(rs.next()){
         int length=6;
@@ -67,7 +67,7 @@
         }
         else{%>
         <script>
-			alert("Error in the DBConnection");
+			alert("Error in the DBConnection,or Invalied user, or Account already Deactivated.");
 			window.location="index.html";
         </script>
         <%	System.out.println("Error in DB Connection");
