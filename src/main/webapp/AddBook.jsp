@@ -90,7 +90,7 @@
         </div>
       </div>-->
       <!-- Content Column -->
-      <div class="col-lg-9 mb-10">
+      <div class="col-9 offset-2 mb-4">
         
         
        <div class="col-lg-9 mb-10">
