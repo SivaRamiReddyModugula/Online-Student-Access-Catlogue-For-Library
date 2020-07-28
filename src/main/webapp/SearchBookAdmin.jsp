@@ -114,6 +114,7 @@
                     </tr>
                 <%
               String bookname = request.getParameter("bookname");
+        		  if(bookname!=""){
               Connection conn = DBConnection.getConnection();
               PreparedStatement ps = conn.prepareStatement("select * from book where bname Like'%"+bookname+"%' or author Like'%"+bookname+"%'  ");
               ResultSet rs = ps.executeQuery();
@@ -126,6 +127,11 @@
                   <td><%= rs.getString("issue") %></td>
                   <td><%= rs.getString("available") %></td>
               </tr>
+              <%}}else{%>
+              	<script type="text/javascript">
+					alert("Please Enter Book Name or Author Name.");
+					window.location="AdminHome.jsp";
+              	</script>
               <%}%></table>
             </div>
           </div>

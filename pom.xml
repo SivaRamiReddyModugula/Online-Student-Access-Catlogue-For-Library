@@ -25,16 +25,17 @@
 <dependency>
     <groupId>mysql</groupId>
     <artifactId>mysql-connector-java</artifactId>
-    <version>8.0.16</version>
+    <version>5.1.18</version>
 </dependency>
 
-   <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+   <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
 <dependency>
     <groupId>javax.servlet.jsp</groupId>
-    <artifactId>jsp-api</artifactId>
-    <version>2.1</version>
+    <artifactId>javax.servlet.jsp-api</artifactId>
+    <version>2.2.1</version>
     <scope>provided</scope>
 </dependency>
+
 
     <!-- https://mvnrepository.com/artifact/org.eclipse.jetty/jetty-servlets -->
 <dependency>
