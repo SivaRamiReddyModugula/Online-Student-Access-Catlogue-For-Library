@@ -113,10 +113,11 @@
         </div>
       </div>
       <!-- Content Column -->
-      <%String htno = request.getParameter("htno");
+      <%String htno = (String)session.getAttribute("htno");
       session.setAttribute("htno", htno);
+      //System.out.print(htno);
       Connection conn = DBConnection.getConnection(); 
-      PreparedStatement ps2=conn.prepareStatement("select * from student where htno='"+htno+"'");
+      PreparedStatement ps2=conn.prepareStatement("select * from student where htno='"+htno+"' AND status='Accepted'");
       ResultSet rs2=ps2.executeQuery();
       %>
                 <div class="col-lg-9 mb-4">

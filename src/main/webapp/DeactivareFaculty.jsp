@@ -110,7 +110,7 @@
           <div class="control-group form-group">
             <div class="controls">
               <label>Faculty id:</label>
-              <input type="text" class="form-control" name="fid" id="name" required data-validation-required-message="Please enter your name.">
+              <input type="text" class="form-control" name="fid" id="name" required="required" data-validation-required-message="Please enter your name.">
               <p class="help-block"></p>
             </div>
           </div>

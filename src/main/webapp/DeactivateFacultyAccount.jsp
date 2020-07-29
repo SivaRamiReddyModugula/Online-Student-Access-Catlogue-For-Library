@@ -116,6 +116,7 @@
       <%
       String fid = (String)session.getAttribute("fid");
       session.setAttribute("fid", fid);
+      //System.out.println(fid);
       Connection conn = DBConnection.getConnection();
       PreparedStatement ps2=conn.prepareStatement("select * from faculty where fid='"+fid+"'");
       ResultSet rs2=ps2.executeQuery();

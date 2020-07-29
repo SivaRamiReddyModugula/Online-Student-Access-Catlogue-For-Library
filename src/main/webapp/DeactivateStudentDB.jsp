@@ -15,6 +15,7 @@
 <body>
 <%
 String htno = (String)session.getAttribute("htno");
+System.out.print(htno);
 Connection conn=DBConnection.getConnection();
 PreparedStatement ps=conn.prepareStatement("update student set status='Deactivated' where htno='"+htno+"'");
 int i=ps.executeUpdate();

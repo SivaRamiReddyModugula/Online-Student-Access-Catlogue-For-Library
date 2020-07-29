@@ -14,6 +14,7 @@
 	<% 
 	String htno = request.getParameter("htno");
 	session.setAttribute("htno", htno);
+	//System.out.println(htno);
 	Connection conn = DBConnection.getConnection(); 
     PreparedStatement ps=conn.prepareStatement("select * from student where htno='"+htno+"' AND status='Accepted'");
     ResultSet rs=ps.executeQuery();
