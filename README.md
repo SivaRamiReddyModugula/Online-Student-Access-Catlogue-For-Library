@@ -8,12 +8,12 @@
 ## Code and Resources Used
 **Java Version:JDK** 1.8  
 **Apachee Tomcat:** 8.0.27.0  
-**MySql server:** 5.0  
+**MySql:** 8.0.21  
 **IDE:** NetBeans or Eclipse  
-**Technology:** J2EE, JSP, Servlets, BootStrap.  
-#### Jar files
-- mail jar
-- Mysql connector
+**Technology:** J2EE, JSP, Servlets, BootStrap, FontAwesome.  
+#### Dependiencies
+- mail 
+- Mysql connector 8.0.16
 ## DataBase
 - First the database is created with the different tables as shown in the following figures.!!  
 **Book:** ![alt book image](https://github.com/SivaRamiReddyModugula/Online-Student-Access-Catlogue-For-Library/blob/master/Table%20Data/List%20of%20Book.PNG)  
