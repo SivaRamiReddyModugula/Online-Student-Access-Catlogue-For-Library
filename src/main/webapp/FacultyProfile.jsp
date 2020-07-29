@@ -120,7 +120,7 @@
       <tr><th>Email</th><td><%= rs.getString("email")%></td></tr>
       <tr><th>Mobile Number</th><td><%=rs.getString("mno")%></td></tr>
       <tr><th>Branch</th><td><%= rs.getString("dept")%></td></tr>
-      <tr><th>Course</th><td><%= rs.getString("course")%></td></tr>
+      <tr><th>Qualification</th><td><%= rs.getString("course")%></td></tr>
       <%}%>
               </table>
               

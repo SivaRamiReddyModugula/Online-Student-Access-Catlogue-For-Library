@@ -111,7 +111,7 @@
                       <th>Name</th>
                       <th>Email</th>
                       <th>Department</th>
-                      <th>Course</th>                      
+                      <th>Qualification</th>                      
                       <th>Status</th>
                       <th>Reject</th>
                   </tr>

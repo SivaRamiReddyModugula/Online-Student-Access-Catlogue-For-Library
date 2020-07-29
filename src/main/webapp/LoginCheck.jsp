@@ -87,7 +87,7 @@ session.setAttribute("uname", uname);
             } else {
                  %>
                 <script>
-                    alert("Library Card Not Generated..");
+                    alert("Invalid Username/Password");
                     window.location="index.html";
                 </script>
         <%

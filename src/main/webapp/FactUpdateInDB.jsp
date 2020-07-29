@@ -21,8 +21,9 @@
             String email=request.getParameter("email");
             String mno=request.getParameter("mno");
             String pswd=request.getParameter("pswd");
+            String course=request.getParameter("course");
             Connection conn = DBConnection.getConnection();
-            PreparedStatement ps=conn.prepareStatement("update faculty set email='"+email+"',mno='"+mno+"',pswd='"+pswd+"' where fid='"+fid+"'");
+            PreparedStatement ps=conn.prepareStatement("update faculty set email='"+email+"',mno='"+mno+"',pswd='"+pswd+"',course='"+course+"' where fid='"+fid+"'");
             int i=ps.executeUpdate();
             if(i>0){%>
             <script>

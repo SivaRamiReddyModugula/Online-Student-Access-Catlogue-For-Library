@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="DBConnection.DBConnection"%>
+<%@page import="java.sql.Connection"%>
 <html lang="en">
 
 <head>
@@ -126,9 +130,30 @@
             </div>
             </p>
             <p><input type="text" name="mno" class="form-control" placeholder="Enter Your Mobile Number" required="required"></p>
-            <p><input type="text" name="branch" class="form-control" placeholder="Enter Your Branch" required="required"></p>
-            <p><input type="text" name="course" class="form-control" placeholder="Enter Your Course" required="required"></p>
-            <p><label class="form-check-label" style="color: blue">"Upload your passport-size photo below. It's mandatory. You can't change-it later.</label></p>
+            <p><select class="form-control" name="branch" required="required">
+            	<option value="">--Select Branch--</option>
+            	<%
+            	Connection conn=DBConnection.getConnection();
+            	PreparedStatement ps=conn.prepareStatement("select * from branch");
+            	ResultSet rs=ps.executeQuery();
+            	while(rs.next()){%>
+            		<option value="<%=rs.getString("branch")%>"><%=rs.getString("branch") %></option>
+            	<%}
+            	%>
+            </select></p>
+            <p><select class="form-control" name="course" required="required">
+            	<option value="">--Select Course--</option>
+            	<%
+            		PreparedStatement ps1=conn.prepareStatement("select * from course");
+            		ResultSet rs1=ps1.executeQuery();
+            		while(rs1.next()){%>
+            			<option value="<%=rs1.getString("course")%>"><%=rs1.getString("course") %></option>
+            		<%}
+            	%>
+            </select></p>
+            <!-- <p><input type="text" name="branch" class="form-control" placeholder="Enter Your Branch" required="required"></p>
+            <p><input type="text" name="course" class="form-control" placeholder="Enter Your Course" required="required"></p> -->
+            <p><label class="form-check-label" style="color: blue;">"Upload your passport-size photo below. It's mandatory. You can't change-it later.</label></p>
             <p><input type='file' name='file' placeholder="Select Profile Picture." onchange="onFileSelected(event)" required="required"></p>
             <img id="myimage" height="200" width="200">
             </div>

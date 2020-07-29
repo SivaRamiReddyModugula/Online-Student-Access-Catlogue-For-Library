@@ -1,21 +1,21 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="DBConnection.DBConnection"%>
-<%@page import="java.sql.Connection"%>
+<%-- 
+    Document   : PayFine
+    Created on : Jan 29, 2020, 3:43:57 PM
+    Author     : Siva Rami Reddy
+--%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<script src="https://kit.fontawesome.com/3d79e937ce.js" crossorigin="anonymous"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
+	<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Online Student Access Catalogue for Library</title>
-  <!-- FontAwesome Core CSS -->
-  <link href="vendor/fontawesome/css/all.css" rel="stylesheet">
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,19 +26,20 @@
 </head>
 
 <body>
-
+    <%@include file="fine.jsp" %>
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="FacultyHome.jsp"><em>Online Student Access Catalogue for Library</em></a>
+      <a class="navbar-brand" href="AdminHome.jsp"><em>Online Student Access Catalogue for Library</em></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link" href="FacultyHome.jsp">Home</a>
+            <a class="nav-link" href="AdminHome.jsp">Home</a>
           </li>
+          
           
           <li class="nav-item">
             <a class="nav-link" href="Logout.jsp">Logout</a>
@@ -77,16 +78,14 @@
   </header>
   <!-- Page Content -->
   <div class="container">
-      <h4>Welcome Miss./Mr. <%= session.getAttribute("name") %></h4>
+
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3"></h1>
 
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-          <a href="FacultyHome.jsp">Home</a>
-      </li>
-      <li class="breadcrumb-item active">
-          <a href="FacultyProfile.jsp">My Profile</a>
+        <a href="AdminHome.jsp">Home</a>
+        <li class="breadcrumb-item active"><a href="PayFine.jsp">Pay Fine</a></li>
       </li>
     </ol>
 
@@ -95,60 +94,49 @@
       <!-- Sidebar Column -->
       <div class="col-lg-3 mb-4">
         <div class="list-group">
-            <a href="FacultyHome.jsp" class="list-group-item">Home</a>
-            <a href="FacultyProfile.jsp" class="list-group-item">My Profile</a>
+          <a href="AdminHome.jsp" class="list-group-item">Home</a>
+          <a href="ViewStudents.jsp" class="list-group-item">Add Students</a>
+          <a href="ViewFaculty.jsp" class="list-group-item">Add Faculty</a>
+          <a href="PayFine.jsp" class="list-group-item">Pay Fine</a>
+          <!-- <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a> -->
+          <a href="AddBook.jsp" class="list-group-item">Add Book</a>
+          <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
+          <a href="Deactivate.jsp" class="list-group-item">Deactivate</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
       </div>
       <!-- Content Column -->
-                <div class="col-lg-9 mb-4">
-        
-      <div class="col-lg-12 mb-4">
+      <div class="col-lg-9 mb-4">
+        <div class="row">
+      <div class="col-lg-6 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Faculty Details</h4>
+          <h4 class="card-header">ADD BRANCH</h4>
           <div class="card-body">
-              <table class="table-bordered table-primary"> 
-                  <form action="FactUpdateInDB.jsp" method="post">
-              <%
-          String fid = (String)session.getAttribute("fid");
-      Connection conn = DBConnection.getConnection();
-      PreparedStatement ps = conn.prepareStatement("select * from faculty where fid='"+fid+"'");
-      ResultSet rs = ps.executeQuery();
-      if(rs.next()){
-              session.setAttribute("fid",fid);
-              %>
-      <tr><td rowspan="8"><img  src="view1.jsp?fid=<%=rs.getString("fid")%>" width="200" height="200" /></td></tr>
-      <tr><th>Roll Number</th><td><%= rs.getString("fid")%></td></tr>
-      <tr><th>Name</th><td><%= rs.getString("fname")%></td></tr>
-      <tr><th>Email</th><td><input type="text" required="required" class="form-control" name="email" value="<%= rs.getString("email")%>"/></td></tr>
-      <tr><th>Password</th>
-      <td>
-      <div class="input-group">
-      <input type="password" required="required" class="form-control" name="pswd" value="<%=rs.getString("pswd")%>" id="facultyPswd">
-      <div class="input-group-prepend">
-              	<div class="input-group-text">
-              		<a href="#" class="text-dark" id="faculty-icon-click">
-              		<i class="fas fa-eye" id="faculty-icon"></i>
-              		</a>
-              	</div>
-              </div>
-      </div>
-      </td></tr>
-      <tr><th>Mobile Number</th><td><input type="text" required="required" class="form-control" name="mno" value="<%=rs.getString("mno")%>"></td></tr>
-      <tr><th>Branch</th><td><%= rs.getString("dept")%></td></tr>
-      <tr><th>Qualification</th><td><input type="text" required="required" class="form-control" name="course" value="<%= rs.getString("course")%>"/></td></tr>
-      <tr><td colspan="3" align="center"><span class="input-group-btn">
-                  &emsp;<button class="btn btn-success" type="submit">Update</button>
-              </span></td></tr>
-      <%}%>
-                  </form>
-              </table>
-              
+            
+              <form action="AddBranchDB.jsp" method="post" id="contactForm" novalidate>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Branch Name:</label>
+              <input type="text" class="form-control" name="branch" id="branch" required data-validation-required-message="Please enter your name.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+        </form>
           </div>
         </div>
       </div>
+      
+      
+    </div>
+        
+        
+        
+        
       </div>
-   
     </div>
     <!-- /.row -->
 
@@ -166,21 +154,8 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript">
-//Faculty icon JQuary.
-  $(document).ready(function(){
-  	$("#faculty-icon-click").click(function() {
-  		$("#faculty-icon").toggleClass('fa-eye-slash');
-  		var x = document.getElementById("facultyPswd");
-  		  if (x.type === "password") {
-  		    x.type = "text";
-  		  } else {
-  		    x.type = "password";
-  		  }
-  	});
-  });
-  </script>
 
 </body>
 
 </html>
+
