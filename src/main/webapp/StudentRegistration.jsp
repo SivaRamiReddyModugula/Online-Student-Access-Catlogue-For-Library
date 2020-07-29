@@ -131,7 +131,7 @@
             </p>
             <p><input type="text" name="mno" class="form-control" placeholder="Enter Your Mobile Number" required="required"></p>
             <p><select class="form-control" name="branch" required="required">
-            	<option value="">--Select Branch--</option>
+            	<option value="-1">--Select Branch--</option>
             	<%
             	Connection conn=DBConnection.getConnection();
             	PreparedStatement ps=conn.prepareStatement("select * from branch");
@@ -142,7 +142,7 @@
             	%>
             </select></p>
             <p><select class="form-control" name="course" required="required">
-            	<option value="">--Select Course--</option>
+            	<option value="-1">--Select Course--</option>
             	<%
             		PreparedStatement ps1=conn.prepareStatement("select * from course");
             		ResultSet rs1=ps1.executeQuery();
