@@ -8,7 +8,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Online Student Access Catalogue for Library</title>
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
 </head>
 <body>
 <%
