@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 /**
  *
- * @author Ramu Maloth
+ * @author Siva Rami Reddy
  */
 public class DBConnection {
     private static Connection con = null;
