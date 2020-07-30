@@ -109,7 +109,7 @@
         
       <div class="col-lg-auto mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Student Details
+          <h4 class="card-header">Faculty Details
           <span style="float: right;">
           <%if(rs1.next()){
                   %>
@@ -130,7 +130,7 @@
                       <th>Mobile Number</th>
                       <th>Email</th>
                       <th>Department</th>                     
-                      <th>Branch</th>
+                      <th>Qualification</th>
                       
                   </tr>
                   <%

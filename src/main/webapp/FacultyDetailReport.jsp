@@ -48,7 +48,7 @@
                 sb.append(",");
                 sb.append("Department");
                 sb.append(",");
-                sb.append("Course");
+                sb.append("Qualfication");
                 sb.append(",");
                 sb.append("Status");
                 sb.append("\r\n");

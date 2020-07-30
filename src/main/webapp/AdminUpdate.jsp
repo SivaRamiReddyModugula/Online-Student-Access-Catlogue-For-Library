@@ -35,7 +35,7 @@
             <a class="nav-link" href="AdminHome.jsp">Home</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="AdminUpdate.jsp"><abbr title="Update admin">Update</abbr></a>
+              <a class="nav-link" href="AdminUpdate.jsp"><abbr title="Add Details">Add Details</abbr></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="GenerateReports.jsp">Generate Reports</a>
