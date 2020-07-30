@@ -37,18 +37,20 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="about.html">Accept Students</a>
+            <a class="nav-link" href="AdminHome.jsp">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="services.html">Accept Faculty</a>
+              <a class="nav-link" href="AdminUpdate.jsp"><abbr title="Add Details">Add Details</abbr></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Add Book</a>
+            <a class="nav-link" href="GenerateReports.jsp">Generate Reports</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Remove Book</a>
+            <a class="nav-link" href="ShowStudents.jsp">Show Students</a>
           </li>
-          
+          <li class="nav-item">
+            <a class="nav-link" href="ShowFaculty.jsp">Show Faculty</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="Logout.jsp">Logout</a>
           </li>
@@ -129,7 +131,7 @@
         
       <div class="col-lg-9 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Student Book Issue Details <span style="float: right; color: #1102FD;"><%=rs1.getString("branch") %></span></h4>
+          <h4 class="card-header">Student Book Issue Details <span style="float: right; color: #1102FD;"><b><%=rs1.getString("branch") %></b></span></h4>
           <div class="card-body">
               <%
                 // Getting number of books issued

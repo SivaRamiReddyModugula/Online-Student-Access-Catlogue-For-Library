@@ -142,7 +142,15 @@
                           %>Not Submitted<%
                       }else{%><%= rs.getString("submitted")%><%}%></td>
                       <td><%= rs.getString("status")%></td>
-                      <td><%= rs.getInt("fine")%></td>
+                      <%
+                      String fine=rs.getString("fine");
+                      int fee=Integer.parseInt(fine);
+                      if(fee<=0){
+                    	  fee=0;
+                      }
+                      %>
+                      <td><%=fee %></td>
+                      <%-- <td><%= rs.getInt("fine")%></td> --%>
                   </tr>
       <%}
       
