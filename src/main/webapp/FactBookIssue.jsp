@@ -113,17 +113,18 @@
         </div>
       </div>
       <!-- Content Column -->
+      <%String fid = request.getParameter("fid");              
+      Connection conn = DBConnection.getConnection();
+      PreparedStatement ps1 = conn.prepareStatement("select * from faculty where fid='"+fid+"' AND status='Accepted'");
+      ResultSet rs1 = ps1.executeQuery();
+      if(rs1.next()){ %>
        <div class="col-lg-9 mb-4">
         
       <div class="col-lg-9 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Faculty Book Issue Details</h4>
+          <h4 class="card-header">Faculty Book Issue Details <span style="float: right; color: #1102FD;"><b><%=rs1.getString("dept") %></b></span></h4>
           <div class="card-body">
-              <% String fid = request.getParameter("fid");              
-              Connection conn = DBConnection.getConnection();
-              PreparedStatement ps1 = conn.prepareStatement("select * from faculty where fid='"+fid+"' AND status='Accepted'");
-              ResultSet rs1 = ps1.executeQuery();
-              if(rs1.next()){
+              <%
               PreparedStatement ps = conn.prepareStatement("select count(*) from factissue where fid='"+fid+"' and status='issued'");
               ResultSet rs = ps.executeQuery();
               if(rs.next()){
