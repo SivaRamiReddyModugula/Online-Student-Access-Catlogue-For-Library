@@ -68,11 +68,16 @@ public class MailUtil {
             msg.setContent(message, "text/html");  
             Transport.send(msg);  
             return true;  
-        } catch (UnsupportedEncodingException | MessagingException ex) {  
+        } catch (UnsupportedEncodingException ex) {  
             Logger.getLogger(MailUtil.class.getName()).log(Level.SEVERE, null, ex);  
             return false;  
   
-        }  
+        }
+        catch (MessagingException ex) {
+			// TODO: handle exception
+        	Logger.getLogger(MailUtil.class.getName()).log(Level.SEVERE, null, ex);  
+            return false;
+		}
     }  
   
     class SocialAuth extends Authenticator {  
