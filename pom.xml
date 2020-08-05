@@ -20,6 +20,12 @@
     <artifactId>javax.mail</artifactId>
     <version>1.6.2</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/com.heroku.sdk/heroku-deploy -->
+<dependency>
+    <groupId>com.heroku.sdk</groupId>
+    <artifactId>heroku-deploy</artifactId>
+    <version>3.0.3</version>
+</dependency>
 
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>

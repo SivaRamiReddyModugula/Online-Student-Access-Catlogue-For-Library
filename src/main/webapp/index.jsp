@@ -101,7 +101,8 @@
           <h4 class="card-header">Administrator</h4>
           <div class="card-body">
             
-              <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
+              <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
+              <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
           <div class="control-group form-group">
             <div class="controls">
               <label>User Name:</label>
@@ -137,7 +138,8 @@
         <div class="card h-100">
           <h4 class="card-header">Faculty</h4>
           <div class="card-body">
-            <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
+            <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
+            <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
           <div class="control-group form-group">
             <div class="controls">
               <label>FID:</label>
@@ -175,7 +177,8 @@
         <div class="card h-100">
           <h4 class="card-header">Student</h4>
           <div class="card-body">
-            <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
+            <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
+            <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
           <div class="control-group form-group">
             <div class="controls">
               <label>Roll Number:</label>
