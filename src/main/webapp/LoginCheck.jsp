@@ -23,7 +23,7 @@ session.setAttribute("uname", uname);
  %>
 <script>
     alert("Invalid Username/Password...");
-    window.location="index.html";
+    window.location="index.html?msg=failed";
 </script>
 <%}
 }else if(status==2){
@@ -45,14 +45,14 @@ session.setAttribute("uname", uname);
              %>
                 <script>
                     alert("Student Login successfull..");
-                    window.location="StudentHome.jsp";
+                    window.location="StudentHome.jsp?msg=success";
                 </script>
         <%
             } else {
                  %>
                 <script>
                     alert("Library Card Not Generated..");
-                    window.location="index.html";
+                    window.location="index.html?msg=failed";
                 </script>
         <%
  }
@@ -60,7 +60,7 @@ session.setAttribute("uname", uname);
                  %>
                 <script>
                     alert("Invalid Username/Password");
-                    window.location="index.html";
+                    window.location="index.html?msg=failed";
                 </script>
         <%
  }
@@ -81,14 +81,14 @@ session.setAttribute("uname", uname);
              %>
                 <script>
                     alert("Faculty Login successfull..");
-                    window.location="FacultyHome.jsp";
+                    window.location="FacultyHome.jsp?msg=success";
                 </script>
         <%
             } else {
                  %>
                 <script>
                     alert("Invalid Username/Password");
-                    window.location="index.html";
+                    window.location="index.html?msg=success";
                 </script>
         <%
  }
@@ -96,7 +96,7 @@ session.setAttribute("uname", uname);
                  %>
                 <script>
                     alert("Invalid Username/Password");
-                    window.location="index.html";
+                    window.location="index.html?msg=success";
                 </script>
         <%
  }

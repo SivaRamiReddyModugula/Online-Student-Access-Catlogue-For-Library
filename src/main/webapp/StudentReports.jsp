@@ -141,7 +141,7 @@
   <!-- Footer -->
   <footer class="py-3 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; My  <a href="https://github.com/SivaRamiReddyModugula">GitHub</a> 2K16-2K20 Batch</p>
+        <p class="m-0 text-center text-white">Copyright &copy; My  <a href="https://github.com/SivaRamiReddyModugula" target="_blank">GitHub</a> 2K16-2K20 Batch</p>
     </div>
     <!-- /.container -->
   </footer>
