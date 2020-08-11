@@ -25,10 +25,43 @@
 
   <!-- Custom styles for this template -->
   <link href="css/modern-business.css" rel="stylesheet">
+  <style type="text/css" media="screen">
+  	.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 600px;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+  </style>
  
 </head>
 
 <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+<div class="loader">
+	<img alt="Loading..." src="gif/loading.gif" />
+</div>
 
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -138,8 +171,8 @@
         <div class="card h-100">
           <h4 class="card-header">Faculty</h4>
           <div class="card-body">
-            <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
-            <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
+            <!-- <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate> -->
+            <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
               <label>FID:</label>
@@ -177,8 +210,8 @@
         <div class="card h-100">
           <h4 class="card-header">Student</h4>
           <div class="card-body">
-            <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
-            <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
+            <!-- <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate> -->
+            <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
               <label>Roll Number:</label>
@@ -266,6 +299,11 @@ $(document).ready(function(){
 		    x.type = "password";
 		  }
 	});
+});
+
+window.addEventListener("load",function(){
+	const loader=document.querySelector(".loader");
+	loader.className+=" hidden";
 });
 </script>
 </body>

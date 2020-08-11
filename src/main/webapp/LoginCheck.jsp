@@ -1,10 +1,47 @@
-
+<!DOCTYPE html>
+<html lang="en">
 <%@page import="DBConnection.DBConnection"%>
 <%@page import="java.sql.Statement"%>
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<head>
+	<style type="text/css" media="screen">
+  	.loader {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader > img {
+    width: 600px;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+  </style>
+</head>
+<body>
+<div class="loader">
+	<img alt="Loading..." src="gif/loading.gif" />
+</div>
 <%
 String uname = request.getParameter("uname");
 String pass = request.getParameter("pass");
@@ -44,7 +81,7 @@ session.setAttribute("uname", uname);
             
              %>
                 <script>
-                    alert("Student Login successfull..");
+                   /*  alert("Student Login successfull.."); */
                     window.location="StudentHome.jsp?msg=success";
                 </script>
         <%
@@ -80,7 +117,7 @@ session.setAttribute("uname", uname);
             session.setAttribute("email", email);
              %>
                 <script>
-                    alert("Faculty Login successfull..");
+                    /* alert("Faculty Login successfull.."); */
                     window.location="FacultyHome.jsp?msg=success";
                 </script>
         <%
@@ -109,3 +146,11 @@ session.setAttribute("uname", uname);
 </script>
 <%}
 %>
+</body>
+<script type="text/javascript">
+window.addEventListener("load",function(){
+	const loader=document.querySelector(".loader");
+	loader.className+=" hidden";
+});
+</script>
+</html>
