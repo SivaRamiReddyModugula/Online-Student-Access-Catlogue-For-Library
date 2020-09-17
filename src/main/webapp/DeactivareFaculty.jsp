@@ -80,6 +80,12 @@
       <li class="breadcrumb-item">
         <a href="AdminHome.jsp">Home</a>
       </li>
+      <li class="breadcrumb-item">
+        <a href="Deactivate.jsp">Deactivate</a>
+      </li>
+      <li class="breadcrumb-item">
+        <a href="DeactivareFaculty.jsp">Deactivate Faculty</a>
+      </li>
     </ol>
 
     <!-- Content Row -->

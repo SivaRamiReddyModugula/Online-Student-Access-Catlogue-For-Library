@@ -104,6 +104,9 @@
       <li class="breadcrumb-item">
         <a href="AdminHome.jsp">Home</a>
       </li>
+      <li class="breadcrumb-item">
+        <a href="Deactivate.jsp">Deactivate</a>
+      </li>
     </ol>
 
     <!-- Content Row -->

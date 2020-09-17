@@ -116,7 +116,7 @@
           <h5 class="card-header">Search for Book Availability</h5>
           <div class="card-body">
             <div class="input-group">
-                <input type="text" name="bookname" class="form-control" placeholder="Enter Book Name or Author Name (Capital Letters)">
+                <input type="text" name="bookname" class="form-control" required="required" placeholder="Enter Book Name or Author Name (Capital Letters)">
               <span class="input-group-btn">
                   &emsp;<button class="btn btn-success" type="submit">Search</button>
               </span>
@@ -134,19 +134,19 @@
           <h4 class="card-header">Administrator</h4>
           <div class="card-body">
             
-              <!-- <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate> -->
+              <!-- <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>	 -->
               <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
               <label>User Name:</label>
-              <input type="text" class="form-control" name="uname" id="name" required data-validation-required-message="Please enter your name.">
+              <input type="text" class="form-control" name="uname" id="name" required="required" data-validation-required-message="Please enter user name.">
               <p class="help-block"></p>
             </div>
           </div>
           <div class="control-group form-group">
               <label>Password:</label>
               <div class="input-group">
-              <input type="password" name="pass" class="form-control" id="adminPswd" required data-validation-required-message="Please enter your phone number.">
+              <input type="password" name="pass" class="form-control" id="adminPswd" required="required" data-validation-required-message="Please enter password.">
               <div class="input-group-prepend">
               	<div class="input-group-text">
               		<a href="#" class="text-dark" id="admin-icon-click">
@@ -171,8 +171,8 @@
         <div class="card h-100">
           <h4 class="card-header">Faculty</h4>
           <div class="card-body">
-            <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
-            <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
+            <!-- <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate> -->
+            <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
               <label>FID:</label>
@@ -210,8 +210,8 @@
         <div class="card h-100">
           <h4 class="card-header">Student</h4>
           <div class="card-body">
-            <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate>
-            <!-- <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate> -->
+            <!-- <form action="LoginCheck1.jsp" method="post" id="contactForm" novalidate> -->
+            <form action="LoginCheck.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
               <label>Roll Number:</label>

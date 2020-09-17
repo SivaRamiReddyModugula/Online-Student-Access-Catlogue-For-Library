@@ -103,7 +103,7 @@
           session.setAttribute("finaly",finaly);
       %>
       
-      <div class="col-lg-9 mb-4">
+      <div class="col-lg-9 offset-2 mb-4">
         <div class="row">
       <div class="col-lg-6 mb-4">
         <div class="card h-100">

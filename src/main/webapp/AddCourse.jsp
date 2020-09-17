@@ -85,7 +85,7 @@
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
         <a href="AdminHome.jsp">Home</a>
-        <li class="breadcrumb-item active"><a href="PayFine.jsp">Pay Fine</a></li>
+        <li class="breadcrumb-item active"><a href="AddCourse.jsp">Add Course</a></li>
       </li>
     </ol>
 
