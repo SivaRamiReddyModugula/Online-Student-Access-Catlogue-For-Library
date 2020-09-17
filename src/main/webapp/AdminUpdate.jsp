@@ -129,10 +129,11 @@
         <div class="card h-100">
           <h4 class="card-header">ADD DETAILS</h4>
           <div class="card-body">
-            
+            <a class="btn btn-primary" href="AddCourse.jsp">Course</a>
+            &emsp;&emsp;&emsp;&emsp;
               <a class="btn btn-primary" href="AddBranch.jsp">Branch</a>
-                &emsp;&emsp;&emsp;&emsp;
-              <a class="btn btn-primary" href="AddCourse.jsp">Course</a>
+                
+              
           </div>
         </div>
       </div>

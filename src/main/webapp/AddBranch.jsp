@@ -5,7 +5,12 @@
 --%>
 
 <!DOCTYPE html>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="DBConnection.DBConnection"%>
+<%@page import="java.sql.Connection"%>
 <html lang="en">
+
 
 <head>
 

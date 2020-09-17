@@ -116,7 +116,7 @@
               <form action="AddCourseDB.jsp" method="post" id="contactForm" novalidate>
           <div class="control-group form-group">
             <div class="controls">
-              <label>Branch Name:</label>
+              <label>Course Name:</label>
               <input type="text" class="form-control" name="course" id="course" required data-validation-required-message="Please enter your name.">
               <p class="help-block"></p>
             </div>
