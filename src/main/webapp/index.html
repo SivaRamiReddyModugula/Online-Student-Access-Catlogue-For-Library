@@ -196,7 +196,7 @@
                   <input type="hidden" value="3" name="status"/>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton" onclick="openLinkdin()">Login</button>
           <span style="float: right"><a href="FacultyForgottenPassNo.jsp">Forgotten password?</a></span>          
         </form>
               <p>New Faculty ? <a href="FacultyRegistration.jsp">Click Here!</a> to Register.</p>
@@ -236,7 +236,7 @@
                   <input type="hidden" value="2" name="status"/>
           <div id="success"></div>
           <!-- For success/fail messages -->
-          <button type="submit" class="btn btn-primary" id="sendMessageButton">Login</button>
+          <button type="submit" class="btn btn-primary" id="sendMessageButton" onclick="openLinkdin()">Login</button>
           <span style="float: right"><a href="StudentForgottenPassNo.jsp">Forgotten password?</a></span>          
         </form>
               <p>New Student ? <a href="StudentRegistration.jsp">Click Here!</a> to Register.</p>
@@ -305,6 +305,10 @@ window.addEventListener("load",function(){
 	const loader=document.querySelector(".loader");
 	loader.className+=" hidden";
 });
+
+function openLinkdin(){
+	window.open('https://www.linkedin.com/in/siva-rami-reddy-modugula-73384b198/');
+}
 </script>
 </body>
 
