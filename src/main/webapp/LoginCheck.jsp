@@ -125,7 +125,7 @@ session.setAttribute("uname", uname);
                  %>
                 <script>
                     alert("Invalid Username/Password");
-                    window.location="index.html?msg=success";
+                    window.location="index.html?msg=failed";
                 </script>
         <%
  }
@@ -133,7 +133,7 @@ session.setAttribute("uname", uname);
                  %>
                 <script>
                     alert("Invalid Username/Password");
-                    window.location="index.html?msg=success";
+                    window.location="index.html?msg=failed";
                 </script>
         <%
  }
