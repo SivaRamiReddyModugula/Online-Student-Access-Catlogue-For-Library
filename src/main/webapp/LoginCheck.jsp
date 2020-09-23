@@ -52,8 +52,8 @@ session.setAttribute("uname", uname);
 %>
 <script>
 //  alert("Admin Login successfull....");
-//  window.location="AdminHome.jsp";
-    window.location="GenerateAdminCode.jsp";
+  window.location="AdminHome.jsp";
+   // window.location="GenerateAdminCode.jsp";
 </script>
 <%
     }else{

@@ -20,8 +20,8 @@
         int length=6;
         String letters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
         String numbers="1234567890";
-        String email="sivaramireddy9553@gmail.com"; // Developer Mail_id
-        //String email=""; // Client Mail_id
+        //String email="sivaramireddy9553@gmail.com"; // Developer Mail_id
+        String email="hellohariprasad123@gmail.com"; // Client Mail_id
         
         String pwd=letters+numbers;
         Random r=new Random();
