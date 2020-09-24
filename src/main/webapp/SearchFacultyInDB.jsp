@@ -1,3 +1,4 @@
+<%@page import="com.sun.mail.imap.ResyncData"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="DBConnection.DBConnection"%>
@@ -12,7 +13,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-	<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" >
   <title>Online Student Access Catalogue for Library</title>
 
   <!-- Bootstrap core CSS -->
@@ -28,25 +29,19 @@
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="AdminHome.jsp"><em>Online Student Access Catalogue for Library</em></a>
+        <a class="navbar-brand" href="AdminHome.jsp"><em>Online Student Access Catalogue for Library</em></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-         <li class="nav-item">
-            <a class="nav-link" href="AdminHome.jsp">Home</a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="SearchStudent.jsp">Search Student</a>
+              <a class="nav-link" href="AdminHome.jsp">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="GenerateReports.jsp">Generate Report</a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="Logout.jsp">Logout</a>
           </li>
-          
         </ul>
       </div>
     </div>
@@ -80,87 +75,90 @@
 
   </header>
   <!-- Page Content -->
-  <div class="container">
-
+  <%
+  String fid = request.getParameter("fid");
+  Connection conn = DBConnection.getConnection();
+  PreparedStatement ps = conn.prepareStatement("select * from faculty where fid='"+fid+"'");
+  ResultSet rs = ps.executeQuery();
+  if(rs.next()){%>
+	  <div class="container">
+      <h4>Welcome Miss./Mr. <%= rs.getString("fname")%></h4>  
+  <%}else{%>
+	  <h4>Welcome User</h4>
+  <%} %>
+  
     <!-- Page Heading/Breadcrumbs -->
     <h1 class="mt-4 mb-3"></h1>
 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="AdminHome.jsp">Home</a></li>
-      <li class="breadcrumb-item active"><a href="ShowStudents.jsp">Show Students</a></li>
-      
+      <li class="breadcrumb-item">
+          <a href="AdminHome.jsp">Home</a>
+      </li>
+      <li class="breadcrumb-item">
+          <a href="ShowFaculty.jsp">Show Faculty</a>
+      </li>
+      <li class="breadcrumb-item">
+          <a href="SearchFaculty.jsp">Search Faculty</a>
+      </li>
     </ol>
 
     <!-- Content Row -->
     <div class="row">
       <!-- Sidebar Column -->
-<!--      <div class="col-lg-3 mb-4">
+      <!-- <div class="col-lg-3 mb-4">
         <div class="list-group">
-          <a href="AdminHome.jsp" class="list-group-item">Home</a>
-          <a href="ViewStudents.jsp" class="list-group-item">Add Students</a>
-          <a href="ViewFaculty.jsp" class="list-group-item">Add Faculty</a>
-          <a href="AddBook.jsp" class="list-group-item">Add Book</a>
-          <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
+            <a href="FacultyHome.jsp" class="list-group-item">Home</a>
+          <a href="FacultyProfile.jsp" class="list-group-item">My Profile</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
-      </div>-->
+      </div> -->
       <!-- Content Column -->
-      <%Connection conn =DBConnection.getConnection();
-      PreparedStatement ps1 = conn.prepareStatement("select count(*) from student where status='Accepted'");
-      ResultSet rs1 = ps1.executeQuery(); %>
-      <div class="col-lg-12 mb-4">
+                <div class="col-lg-9 mb-4">
         
-      <div class="col-lg-auto mb-4">
+      <div class="col-lg-12 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Student Details
-          <span style="float: right">
-          	<%
-              
-              if(rs1.next()){
-                  %>
-                  
-              <h6 align="center">Total Registered Students: <b  style="color: red"><%=rs1.getInt(1)%></b>.</h6>
-              <%
-              }
-              %>
-          </span>
-          </h4>
+          <h4 class="card-header">Faculty Transaction Details</h4>
           <div class="card-body">
-              
-              <table align="center" class="table-bordered table-primary">
+              <table class="table-bordered table-primary">  
                   <tr>
-                      <th>Roll Number</th>
-                      <th>Photo</th>
-                      <th>Name</th>
-                      <th>Mobile Number</th>
-                      <th>Email</th>
-                      <th>Course</th>                     
-                      <th>Branch</th>
-                  </tr>
-                  <%
-                  
-                  PreparedStatement ps = conn.prepareStatement("select * from student where status='Accepted'");
-                  ResultSet rs = ps.executeQuery();
-                  while(rs.next()){
-                  %>
-                  
-                  <tr>
-                      <td><%= rs.getString("htno")%></td>
-                      <td><img  src="view.jsp?htno=<%=rs.getString("htno")%>" width="75" height="75" /></td>
-                      <td><%= rs.getString("sname")%></td>
-                      <td><%= rs.getString("mno")%></td>
-                      <td><%= rs.getString("email")%></td>
-                      <td><%= rs.getString("branch")%></td>
-                      <td><%= rs.getString("course")%></td>
+                      <th>Book ID</th>
+                      <th>Book Name</th>
+                      <th>Author Name</th>
+                      <th>Issued Date</th>
+                      <th>Submit Date</th>
+                      <th>Submitted Date</th>
+                      <th>Status</th>
                       
                   </tr>
-                  <%}%>
+              <%
+          
+      PreparedStatement ps1 = conn.prepareStatement("select * from factissue where fid='"+fid+"' ORDER BY status asc");
+      ResultSet rs1 = ps1.executeQuery();
+      while(rs1.next()){
+              String s =rs1.getString("status") ;
+              %>
+      <tr>
+                      <td><%= rs1.getString("bid")%></td>
+                      <td><%= rs1.getString("bname")%></td>
+                      <td><%= rs1.getString("author")%></td>
+                      <td><%= rs1.getString("issue")%></td>
+                      <td><%= rs1.getString("submit")%></td>
+                      <td><%if(s.equals("issued")){
+                          %>Not Submitted<%
+                      }else{%><%= rs1.getString("submitted")%><%}%></td>
+                      <td><%= rs1.getString("status")%></td>
+                      
+                  </tr>
+      <%}
+      
+      %>
               </table>
-              
+             <%session.setAttribute("fid",fid);%>
           </div>
         </div>
       </div>
       </div>
+   
     </div>
     <!-- /.row -->
 

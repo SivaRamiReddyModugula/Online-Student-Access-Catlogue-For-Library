@@ -95,8 +95,8 @@
         <div class="list-group">
             <a href="FacultyHome.jsp" class="list-group-item">Home</a>
             <a href="FacultyProfile.jsp" class="list-group-item">My Profile</a>
-            <%String htno = (String)session.getAttribute("htno");%>
-          <a href="UpdateFaculty.jsp?htno=htno" class="list-group-item">Update</a>
+            <%String htno = (String)session.getAttribute("fid");%>
+          <a href="UpdateFaculty.jsp?fid=fid" class="list-group-item">Update</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
       </div>

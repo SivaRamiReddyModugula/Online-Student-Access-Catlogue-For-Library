@@ -1,7 +1,5 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="DBConnection.DBConnection"%>
-<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +22,7 @@
 </head>
 
 <body>
-
+    <%-- <%@include file="fine.jsp" %> --%>
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -34,19 +32,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-         <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="AdminHome.jsp">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="SearchStudent.jsp">Search Student</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="GenerateReports.jsp">Generate Report</a>
-          </li>
+          
+          
           <li class="nav-item">
             <a class="nav-link" href="Logout.jsp">Logout</a>
           </li>
-          
         </ul>
       </div>
     </div>
@@ -86,80 +79,60 @@
     <h1 class="mt-4 mb-3"></h1>
 
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="AdminHome.jsp">Home</a></li>
-      <li class="breadcrumb-item active"><a href="ShowStudents.jsp">Show Students</a></li>
+      <li class="breadcrumb-item">
+        <a href="AdminHome.jsp">Home</a></li>
+        <li class="breadcrumb-item"><a href="ShowFaculty.jsp">Show Faculty</a></li>
+        <li class="breadcrumb-item active"><a href="SearchFaculty.jsp">Search Faculty</a></li>
       
     </ol>
 
     <!-- Content Row -->
     <div class="row">
       <!-- Sidebar Column -->
-<!--      <div class="col-lg-3 mb-4">
+      <!-- <div class="col-lg-3 mb-4">
         <div class="list-group">
           <a href="AdminHome.jsp" class="list-group-item">Home</a>
           <a href="ViewStudents.jsp" class="list-group-item">Add Students</a>
           <a href="ViewFaculty.jsp" class="list-group-item">Add Faculty</a>
+          <a href="PayFine.jsp" class="list-group-item">Pay Fine</a>
+          <a href="MailConfirm.jsp" class="list-group-item">Send Mails to Students</a>
           <a href="AddBook.jsp" class="list-group-item">Add Book</a>
           <a href="RemoveBook.jsp" class="list-group-item">Remove Book</a>
+          <a href="Deactivate.jsp" class="list-group-item">Deactivate</a>
           <a href="Logout.jsp" class="list-group-item">Logout</a>
         </div>
-      </div>-->
+      </div> -->
       <!-- Content Column -->
-      <%Connection conn =DBConnection.getConnection();
-      PreparedStatement ps1 = conn.prepareStatement("select count(*) from student where status='Accepted'");
-      ResultSet rs1 = ps1.executeQuery(); %>
-      <div class="col-lg-12 mb-4">
-        
-      <div class="col-lg-auto mb-4">
+      <div class="col-lg-9 mb-4">
+        <div class="row">
+      <div class="col-lg-6 mb-4">
         <div class="card h-100">
-          <h4 class="card-header">Student Details
-          <span style="float: right">
-          	<%
-              
-              if(rs1.next()){
-                  %>
-                  
-              <h6 align="center">Total Registered Students: <b  style="color: red"><%=rs1.getInt(1)%></b>.</h6>
-              <%
-              }
-              %>
-          </span>
-          </h4>
+          <h4 class="card-header">Search Faculty</h4>
           <div class="card-body">
-              
-              <table align="center" class="table-bordered table-primary">
-                  <tr>
-                      <th>Roll Number</th>
-                      <th>Photo</th>
-                      <th>Name</th>
-                      <th>Mobile Number</th>
-                      <th>Email</th>
-                      <th>Course</th>                     
-                      <th>Branch</th>
-                  </tr>
-                  <%
-                  
-                  PreparedStatement ps = conn.prepareStatement("select * from student where status='Accepted'");
-                  ResultSet rs = ps.executeQuery();
-                  while(rs.next()){
-                  %>
-                  
-                  <tr>
-                      <td><%= rs.getString("htno")%></td>
-                      <td><img  src="view.jsp?htno=<%=rs.getString("htno")%>" width="75" height="75" /></td>
-                      <td><%= rs.getString("sname")%></td>
-                      <td><%= rs.getString("mno")%></td>
-                      <td><%= rs.getString("email")%></td>
-                      <td><%= rs.getString("branch")%></td>
-                      <td><%= rs.getString("course")%></td>
-                      
-                  </tr>
-                  <%}%>
-              </table>
-              
+            
+              <form action="SearchFacultyInDB.jsp" method="post" id="contactForm" novalidate>
+          <div class="control-group form-group">
+            <div class="controls">
+              <label>Faculty ID:</label>
+              <input type="text" class="form-control" name="fid" id="name" required data-validation-required-message="Please enter your name.">
+              <p class="help-block"></p>
+            </div>
+          </div>
+          
+          <div id="success"></div>
+          <!-- For success/fail messages -->
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Search</button>
+        </form>
           </div>
         </div>
       </div>
+      
+      
+    </div>
+        
+        
+        
+        
       </div>
     </div>
     <!-- /.row -->

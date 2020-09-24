@@ -37,6 +37,9 @@
           <li class="nav-item">
             <a class="nav-link" href="AdminHome.jsp">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="SearchFaculty.jsp">Search Faculty</a>
+          </li>
             <li class="nav-item">
             <a class="nav-link" href="GenerateReports.jsp">Generate Report</a>
           </li>
