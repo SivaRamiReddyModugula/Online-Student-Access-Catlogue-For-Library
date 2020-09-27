@@ -92,6 +92,23 @@
         </div>
       </div>-->
       <!-- Content Column -->
+      <!-- <div class="col-9 offset-2 mb-4">
+      	<div class="col-lg-9 mb-10">
+      		<div class="card h-100">
+      			<h4 class="card-header">Add File</h4>
+      			<div class="card-body">
+      				<form action="AddBookFileDataDB" method="post" id="contactForm" enctype="multipart/form-data" novalidate>
+      				<div class="control-group form-group">
+      					<div class="controls">
+      						<input type="file" name="file" id="file" class="form-control"/>
+      					</div>
+      				</div>
+      				<button type="submit" class="btn btn-primary" id="sendMessageButton">Add File</button>
+      				</form>
+      			</div>
+      		</div>
+      	</div>
+      </div> -->
       <div class="col-9 offset-2 mb-4">
         
         

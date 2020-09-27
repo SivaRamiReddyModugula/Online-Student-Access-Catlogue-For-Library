@@ -129,8 +129,8 @@
                       <td><%= rs.getString("email")%></td>
                       <td><%= rs.getString("branch")%></td>
                       <td><%= rs.getString("course")%></td>
-                      <td><abbr title="Activate Account!"><a href="activate.jsp?htno=<%=rs.getString("htno")%>&email=<%=rs.getString("email")%>"><%=rs.getString("status")%></a></abbr></td>
-                      <td><abbr title="Reject Account!"><a href="RejectStudent.jsp?htno=<%=rs.getString("htno")%>&email=<%=rs.getString("email")%>" style="color: red">Reject</a></abbr></td>
+                      <td><abbr title="Activate Account!"><a href="activate.jsp?htno=<%=rs.getString("htno")%>&email=<%=rs.getString("email")%>" class="btn text-primary"><i class="fas fa-check"></i></a></abbr></td>
+                      <td><abbr title="Reject Account!"><a href="RejectStudent.jsp?htno=<%=rs.getString("htno")%>&email=<%=rs.getString("email")%>" class="btn text-danger"><i class="far fa-trash-alt"></i></a></abbr></td>
                   </tr>
                   <%}%>
               </table>
